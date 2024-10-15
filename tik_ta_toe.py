@@ -11,16 +11,16 @@ class TicTacToe:
         self.score_x = 0
         self.score_o = 0
 
-        # Create buttons for the board
+    
         self.buttons = [tk.Button(master, text=" ", font='Arial 20', width=5, height=2,
                                    bg="lightblue", command=lambda i=i: self.player_move(i)) for i in range(9)]
         self.create_board()
 
-        # Add a reset button
+      
         self.reset_button = tk.Button(master, text="Reiniciar Juego", font='Arial 14', command=self.reset_game)
         self.reset_button.grid(row=3, columnspan=3)
 
-        # Score labels
+        
         self.score_label = tk.Label(master, text=f"X: {self.score_x}  O: {self.score_o}", font='Arial 14')
         self.score_label.grid(row=4, columnspan=3)
 
@@ -46,7 +46,7 @@ class TicTacToe:
                 messagebox.showinfo("Empate", "¡Es un empate!")
                 self.reset_game()
             else:
-                # If AI mode is enabled, make AI move
+           
                 if self.is_ai and self.current_player == "X":
                     self.current_player = "O"
                     self.ai_move()
@@ -66,7 +66,7 @@ class TicTacToe:
                 messagebox.showinfo("Empate", "¡Es un empate!")
                 self.reset_game()
             else:
-                # Switch back to player X after AI move
+               
                 self.current_player = "X"
 
     def check_winner(self, player):
